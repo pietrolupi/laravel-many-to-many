@@ -35,7 +35,11 @@
               <td>
                 @forelse ($project->technologies as $technology)
 
-                    {{$technology->name}}
+                    <a href="{{route('admin.project-technology', $technology)}}">
+
+                        {{$technology->name}}
+
+                    </a>
 
                 @empty
                     -

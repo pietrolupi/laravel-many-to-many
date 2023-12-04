@@ -110,6 +110,18 @@
 
         </div>
 
+        <div class="mb-3">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                @foreach ($technologies as $technology)
+
+                    <input name="technologies[]" id="technology_{{$technology->id}}" value="{{$technology->id}}" type="checkbox" class="btn-check"  autocomplete="off">
+                    <label class="btn btn-outline-primary" for="technology_{{$technology->id}}">{{$technology->name}}</label>
+
+                @endforeach
+
+              </div>
+        </div>
+
 
 
         <button type="submit" class="btn btn-success">Invia</button>

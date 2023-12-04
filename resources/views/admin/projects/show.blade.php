@@ -11,6 +11,15 @@
         <span> Tipologia <strong>{{$project->type->name }}</strong> </span>
     @endif
 
+    <br>
+
+    @forelse ($project->technologies as $technology)
+
+        <span> <strong>{{$technology->name }}</strong> </span>
+    @empty
+        -
+    @endforelse
+
     <div class="img-container w-50">
 
         <img class="img-fluid" src="{{asset('storage/' . $project->image)}}" alt="{{$project->title}}">

@@ -18,6 +18,7 @@
           <tr>
             <th scope="col">Titolo</th>
             <th scope="col">Descrizione</th>
+            <th scope="col">Tecnologie</th>
             <th scope="col">Tipologia</th>
             <th scope="col">Link</th>
             <th scope="col">Altri sviluppatori</th>
@@ -30,6 +31,17 @@
             <tr>
               <td>{{$project->title}}</td>
               <td>{!!$project->description!!}</td>
+
+              <td>
+                @forelse ($project->technologies as $technology)
+
+                    {{$technology->name}}
+
+                @empty
+                    -
+                @endforelse
+              </td>
+
               <td>{{$project->type?->name ?? '-'}}</td>
               <td>{{$project->github_link}}</td>
               <td>{{$project->other_developers}}</td>

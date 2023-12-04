@@ -53,6 +53,27 @@
             </div>
 
             <div class="mb-3">
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    @foreach ($technologies as $technology)
+
+                        <input
+                        name="technologies[]"
+                        id="technology_{{$technology->id}}"
+                        value="{{$technology->id}}"
+                        type="checkbox"
+                        class="btn-check"
+                        autocomplete="off"
+                        @if ( $project->technologies->contains($technology->id) )
+                            checked
+                        @endif>
+                        <label class="btn btn-outline-primary" for="technology_{{$technology->id}}">{{$technology->name}}</label>
+
+                    @endforeach
+
+                  </div>
+            </div>
+
+            <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea
                 class="form-control

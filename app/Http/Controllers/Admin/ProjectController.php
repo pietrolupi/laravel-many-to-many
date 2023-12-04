@@ -130,6 +130,12 @@ class ProjectController extends Controller
         $form_data['image'] = Storage::put('uploads/', $form_data['image']);
     }
 
+    if(array_key_exists('technologies', $form_data)){
+        $project->technologies()->sync($form_data['technologies']);
+    }else{
+        $project->technologies()->detach();
+    }
+
     $project->update($form_data);
 
     return redirect()->route('admin.projects.show', $project)->with('success', 'Progetto aggiornato con successo');

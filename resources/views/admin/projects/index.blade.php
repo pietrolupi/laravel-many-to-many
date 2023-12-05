@@ -37,7 +37,7 @@
 
                     <a href="{{route('admin.project-technology', $technology)}}">
 
-                        {{$technology->name}}
+                       {{$technology->name}}
 
                     </a>
 
@@ -49,10 +49,10 @@
               <td>{{$project->type?->name ?? '-'}}</td>
               <td>{{$project->github_link}}</td>
               <td>{{$project->other_developers}}</td>
-              <td class="d-flex justify-content-between">
-                <a class="btn btn-primary" href="{{route('admin.projects.show', $project)}}"><i class="fa-solid fa-eye"></i></a>
+              <td>
+                <a class="btn btn-primary d-inline-block " href="{{route('admin.projects.show', $project)}}"><i class="fa-solid fa-eye"></i></a>
 
-                <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+                <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning d-inline-block "><i class="fa-solid fa-pencil"></i></a>
 
                 @include('admin.partials.form_delete', ['route' => route('admin.projects.destroy', $project),
                  'message' => 'Vuoi davvero procedere ad eliminare permanentemente questo progetto '])
